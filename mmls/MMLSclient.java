@@ -124,7 +124,7 @@ public class MMLSclient{
     String etime = attendanceSINTformat.format(cal.getTime());
 
     String sign_url = targetCourse.generateAttendanceURL(a_target);
-    System.out.format("Attempting to for %s with url %s\n",targetCourse.getTitle(),sign_url);
+    System.out.format("Attempting to REGISTER for %s with url %s\n",targetCourse.getTitle(),sign_url);
     Connection initial = Jsoup.connect(sign_url);
     Connection login = Jsoup.connect(url_mmls_atlg);
     login.followRedirects(true); //set this to true to auto follow

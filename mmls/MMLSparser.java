@@ -100,6 +100,11 @@ public class MMLSparser{
     return alertString.text();
   }
 
+  public String parseSignInSilent(){
+    //parses the message of sign ins (result) DOES NOT PRINT
+    Element alertString = target_doc.body().select("div.alert").first();
+    return alertString.text();
+  }
 
   public List<MMLScourse> readClassDat(String student_id){
     //reads from /data/<student_id> file to obtain the class data
@@ -115,22 +120,20 @@ public class MMLSparser{
           courselist.add( MMLScourse.readFile(student_id,listOfFiles[i].getName()));
         }
       }
-      for(MMLScourse course : courselist){
-        course.printStatus();
-      }
     }catch(Exception e){
       e.printStackTrace();
     }
     return courselist;
   }
 
-  public void retrClassDat(String student_id){
+  public List<MMLScourse> retrClassDat(String student_id){
     //retrives the relevant class data and stores it on the /data dir
     List<MMLScourse> courselist = retrH3Element();
     for(MMLScourse course : courselist){
       //course.printStatus();
       course.saveFile("1161300548"); //saves to file
     }
+    return courselist;
   }
 
   //#############################################################################################
@@ -149,7 +152,7 @@ public class MMLSparser{
     for(Element clink : h3_panelheading_links){
       linkstr = clink.attr("href");
       title = clink.text();
-      System.out.println("ClassTitle --- ClassURL: "+title+"\t"+linkstr);
+      //System.out.println("ClassTitle --- ClassURL: "+title+"\t"+linkstr);
       tmp_coord_id = linkstr.split("/")[3].split(":")[1];
       tmp_class_id = linkstr.split("/")[3].split(":")[0];
       out.add( new MMLScourse(title, tmp_class_id  , tmp_coord_id ));

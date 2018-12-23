@@ -60,6 +60,10 @@ public class MMLScourse implements Serializable{
     }
   }
 
+  public int getCurrentTarget(){
+    return currentScn;
+  }
+
   public void addLinkInstance(String result){
     //adds the result to the currentLinkInstance
     Boolean validity = false;
@@ -75,6 +79,7 @@ public class MMLScourse implements Serializable{
 
   public void setRange(int a_start,int a_end){
     //sets the starting range and ending range
+    currentScn = a_start;
     startRange = a_start;
     ehaltRange = a_end;
   }
@@ -120,7 +125,7 @@ public class MMLScourse implements Serializable{
 				.append(coord_id).toString();
   }
 
-  private void refreshLinkInstances(){
+  public void refreshLinkInstances(){
     results = new ArrayList<QRLinkInstance>();
     currentScn = startRange;
   }

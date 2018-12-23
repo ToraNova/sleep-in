@@ -2,7 +2,9 @@ package mmls;
 
 import java.util.List;
 
-public class QRLinkInstance{
+import java.io.Serializable;
+
+public class QRLinkInstance implements Serializable{
   private int instanceNum;
   private Boolean validInstance;
   private String resultString;
