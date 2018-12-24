@@ -47,7 +47,7 @@ public class MMLScourse implements Serializable{
 
   public MMLScourse(String a_title,String a_class_id,String a_coord_id){
     //default funcs
-    this(a_title,a_class_id,a_coord_id,0,99999);
+    this(a_title,a_class_id,a_coord_id,1,99999);
   }
 
   //#############################################################################################
