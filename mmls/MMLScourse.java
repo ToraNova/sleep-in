@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.Serializable;
 import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
-
-
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
 
 public class MMLScourse implements Serializable{
 
@@ -57,6 +57,35 @@ public class MMLScourse implements Serializable{
   public void showLinksInstances(){
     for(QRLinkInstance q : results){
       System.out.println(q.getString());
+    }
+  }
+
+  public void writeLinksInstances(){
+    BufferedWriter bw = null;
+    try{
+      File fout = new File("csv",class_id+".csv");
+  	  FileOutputStream fos = new FileOutputStream(fout);
+      bw = new BufferedWriter(new OutputStreamWriter(fos));
+      bw.write(" , ,QR LinkInstance data csv\n");
+      bw.write("Course:,"+" ,"+getTitle()+'\n');
+      bw.write("CourseID:,"+" ,"+class_id+'\n');
+      bw.write("CoordID:,"+" ,"+coord_id+'\n');
+      bw.newLine();
+      bw.write("TTID,Validity,Result status\n");
+    	for (QRLinkInstance q : results) {
+    		bw.write(q.getString());
+    		bw.newLine();
+    	}
+    }catch(Exception e){
+      e.printStackTrace();
+    }finally{
+      if(bw != null){
+        try{
+          bw.close();
+        }catch(Exception e){
+          e.printStackTrace();
+        }
+      }
     }
   }
 

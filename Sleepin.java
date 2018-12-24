@@ -39,6 +39,8 @@ public class Sleepin{
       printMenu();
     }else if(new String(cmdstr).equals("show")){
       printCourses();
+    }else if(new String(cmdstr).equals("exit")){
+      System.exit(0);
     }else{
       cmdf = cmdstr.charAt(0);
       try{
@@ -99,6 +101,7 @@ public class Sleepin{
           selectCourse.showLinksInstances();
           return;
         case 'p':
+          selectCourse.writeLinksInstances();
           //print to excel here
           return;
         case 'c':
@@ -189,6 +192,7 @@ public class Sleepin{
     System.out.println(" <x> is denoted as the selector. s<x> could be s0,s1 ...");
     System.out.println(" help - show this screen");
     System.out.println(" show - show the course status");
+    System.out.println(" exit - quit the program");
     System.out.println(" s,<x>,<num> - start to scan n instances on x");
     System.out.println(" r,<x>,<start>,<end> - re-range x");
     System.out.println(" q,<x>,<num> - register for singular instance of x");

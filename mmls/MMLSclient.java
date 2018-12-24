@@ -160,7 +160,6 @@ public class MMLSclient{
 
       //debugging prints
       System.out.format("Laravel Session cookie: %s\nLogin token: %s\n",session_cookie,login_token);
-      System.out.format("Attempting to sign onto mmls attendance with sid %s on url %s\n",stud_id,sign_url);
       System.out.format("Using edited time s= %s , e= %s , date = %s\n",stime,etime,sdate);
       return login_response;
     }
