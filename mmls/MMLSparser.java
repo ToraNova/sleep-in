@@ -131,7 +131,7 @@ public class MMLSparser{
     List<MMLScourse> courselist = retrH3Element();
     for(MMLScourse course : courselist){
       //course.printStatus();
-      course.saveFile("1161300548"); //saves to file
+      course.saveFile(student_id); //saves to file
     }
     return courselist;
   }
