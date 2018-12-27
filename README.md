@@ -7,5 +7,4 @@
 * jsoup library
 * apache commons io
 
-> For more usage instructions, pls read the instructions.txt
-file located in the root directory
+
