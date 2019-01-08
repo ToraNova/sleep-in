@@ -17,6 +17,9 @@ public class Sleepin{
   private static MMLSclient mmls0;
 
   public static void main(String [] args){
+    System.out.println("!---Warning---!");
+    System.out.println("please do not run this program after 11pm");
+    System.out.println("rescheduling does not work!");
     credPrompt();
     mmls0 = new MMLSclient(sid,pw);
     mainparse = new MMLSparser();

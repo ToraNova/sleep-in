@@ -118,9 +118,11 @@ public class MMLSclient{
     Calendar cal = Calendar.getInstance(); // creates calendar
     cal.setTime(new Date()); //sets current time
     String sdate = attendanceSINDformat.format(cal.getTime());
-    cal.add(Calendar.MINUTE, -5); //set starttime 2 hours before currentTime
+    //cal.add(Calendar.MINUTE, -5);
+    cal.add(Calendar.HOUR_OF_DAY,-1);//set starttime 1 hours before currentTime
     String stime = attendanceSINTformat.format(cal.getTime());
-    cal.add(Calendar.MINUTE, 10); //set endtime 2 hours after currentTime
+    //cal.add(Calendar.MINUTE, 10);
+    cal.add(Calendar.HOUR_OF_DAY,+2);//set endtime 1 hours after currentTime
     String etime = attendanceSINTformat.format(cal.getTime());
 
     String sign_url = targetCourse.generateAttendanceURL(a_target);
