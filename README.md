@@ -8,5 +8,5 @@
 * apache commons io
 
 ### Relevant Works
-[Python Scraper](https://github.com/ohmstance/MMLS-Attendance-Scraper) is an independent project by ohmstance which will also allow users to obtain the registration url automatically.
+[MMLS-Attendance-Scraper](https://github.com/ohmstance/MMLS-Attendance-Scraper) is an independent project by ohmstance which will also allow users to obtain the registration url automatically. The project uses Python instead of Java to exploit the vulnerability.
 
