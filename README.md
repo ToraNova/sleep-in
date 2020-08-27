@@ -8,5 +8,5 @@
 * apache commons io
 
 ### Relevant Works
-There is also a [Python Scraper](https://github.com/ohmstance/MMLS-Attendance-Scraper) tool by ohmstance which will also allow users to obtain the registration url automatically.
+[Python Scraper](https://github.com/ohmstance/MMLS-Attendance-Scraper) is an independent project by ohmstance which will also allow users to obtain the registration url automatically.
 
